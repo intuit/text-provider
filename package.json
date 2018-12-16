@@ -1,0 +1,42 @@
+{
+  "name": "text-provider",
+  "version": "0.0.14",
+  "description": "A component which provides all the string constants using provider pattern.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/intuit/text-provider"
+  },
+  "main": "build/index.js",
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "webpack": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack",
+    "lint": "eslint"
+  },
+  "author": {
+    "name": "Rohith R",
+    "email": "rohithr31@gmail.com"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "eslint": "^5.10.0",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "presets": [
+        ["env", {
+            "targets": {
+                "safari": 9
+            },
+            "modules": false
+        }]
+    ]
+}

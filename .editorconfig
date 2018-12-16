@@ -1,0 +1,10 @@
+# Tab indentation (no size specified)
+[*.yml]
+indent_style = space
+indent_size = 2
+[*.js]
+indent_style = space
+indent_size = 4
+[*.md]
+indent_style = space
+indent_size = 4
