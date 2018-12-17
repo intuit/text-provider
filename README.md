@@ -1,4 +1,8 @@
 <div align="center">
+    <img
+        width="200" height="200"
+        src="./logo.png"
+    />
     <h1>text-provider</h1>
     <p>
         A component which provides all the string constants using provider pattern
