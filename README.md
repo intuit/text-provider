@@ -36,9 +36,10 @@
     </a>
 </div>
 
-Text provider is a library to place all the string constants in a single place and use them inside the widgets in a memory friendly way.
+Text provider is a library to place all the string constants of an application in a single place and use them inside the components in a memory friendly way.
 
-It provides two components :
+It provides two components:
+
 1. [TextProvider](src/TextProvider/index.js)
 2. [FormattedMessage](src/FormattedMessage/index.js)
 
@@ -50,37 +51,43 @@ npm i text-provider
 
 ## Usage
 
-1. Import the string constants required for the particular presentational component :
+1. Import the string constants required for the particular presentational component:
 
 ```javascript
 const sampleText = require("src/nls/sample-text.json");
 ```
 
-2. Use the [TextProvider](src/TextProvider/index.js) to make it available for all the components :
+2. Use the [TextProvider](src/TextProvider/index.js) to make it available for all the components:
+
 ```jsx
 <TextProvider globalText={sampleText} >
-	<MyPresentationalComponent />
+  <MyPresentationalComponent />
 </TextProvider>
 ```
 
-3. Use it inside the presentational component :
+3. Use it inside the presentational component:
+
 ```jsx
 <FormattedMessage id="Random Id"/>
 ```
+
 ```jsx
-const values = {
-    "valueToBeInjected": "Random Value"
-};
 const randomId = "Random Id";
+const values = {
+  "valueToBeInjected": "Random Value"
+};
+
 <FormattedMessage id={randomId} values={values}/>
 ```
-Works like a format string also. Example JSON :
+
+Works like a format string also. Example JSON:
 
 ```json
 {
-	"Random Id": "<b>Random Text Returns</b> {valueToBeInjected} for each text)"
+  "Random Id": "<b>Random Text Returns</b> {valueToBeInjected} for each text)"
 }
 ```
+
 Then ``${valueToBeInjected}`` gets replaced with the value specified in `values`.
 
 Make sure that a string by the same `id` exists in the JSON file.
