@@ -7,9 +7,9 @@ jobs:
       - image: circleci/node:8.11.2
     steps:
       - checkout
-      - run: npm install
-      - run: npm run build
-      - run: npm run lint src
+      - run: yarn install
+      - run: yarn run build
+      - run: yarn run lint src
       - persist_to_workspace:
           root: .
           paths:
