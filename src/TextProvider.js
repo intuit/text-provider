@@ -10,8 +10,8 @@ export class TextProvider extends React.Component {
     }
     render() {
         return (
-          <TextContext.Provider value={ this.props.globalText }>
-            <div> { this.props.children } </div>
+          <TextContext.Provider value={this.props.globalText}>
+            {this.props.children}
           </TextContext.Provider>
         );
     }
