@@ -16,11 +16,7 @@ export class FormattedMessage extends React.Component {
             messageString = messageString.replace("{" + key + "}", this.props.values[key]);
         }
         return (
-<<<<<<< HEAD:src/FormattedMessage.js
             <span dangerouslySetInnerHTML={{ __html: messageString }}/>
-=======
-          <span dangerouslySetInnerHTML={{ __html: messageString }}/>
->>>>>>> upstream/master:src/FormattedMessage.js
         );
     }
 }
@@ -33,11 +29,6 @@ FormattedMessage.propTypes = {
 };
 
 FormattedMessage.defaultProps = {
-<<<<<<< HEAD:src/FormattedMessage.js
     id: "",
     values: {}
-=======
-  id: "",
-  values: {}
->>>>>>> upstream/master:src/FormattedMessage.js
 };
