@@ -16,7 +16,7 @@ export class FormattedMessage extends React.Component {
             messageString = messageString.replace("{" + key + "}", this.props.values[key]);
         }
         return (
-          <span dangerouslySetInnerHTML={{ __html: messageString }}/>
+            <span dangerouslySetInnerHTML={{ __html: messageString }}/>
         );
     }
 }
@@ -29,6 +29,6 @@ FormattedMessage.propTypes = {
 };
 
 FormattedMessage.defaultProps = {
-  id: "",
-  values: {}
+    id: "",
+    values: {}
 };
