@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const TextContext = React.createContext({})
+export const TextContext = React.createContext({});
 
 export class TextProvider extends React.Component {
 
@@ -10,9 +10,9 @@ export class TextProvider extends React.Component {
     }
     render() {
         return (
-          <TextContext.Provider value={this.props.globalText}>
-            {this.props.children}
-          </TextContext.Provider>
+            <TextContext.Provider value={this.props.globalText}>
+                {this.props.children}
+            </TextContext.Provider>
         );
     }
 }
