@@ -1,5 +1,5 @@
-import {FormattedMessage} from "FormattedMessage";
-import {TextProvider} from "TextProvider";
+import {FormattedMessage} from "./FormattedMessage";
+import {TextProvider} from "./TextProvider";
 
 export {
     FormattedMessage,

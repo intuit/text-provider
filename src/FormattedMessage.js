@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TextContext } from "TextProvider";
+import { TextContext } from "./TextProvider";
 
 export class FormattedMessage extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ export class FormattedMessage extends React.Component {
     }
 }
 
-FormattedMessage.contextTypes = TextContext;
+FormattedMessage.contextType = TextContext;
 
 FormattedMessage.propTypes = {
     id: PropTypes.string,

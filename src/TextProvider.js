@@ -18,5 +18,10 @@ export class TextProvider extends React.Component {
 }
 
 TextProvider.propTypes = {
-    globalText: PropTypes.object
+    globalText: PropTypes.object,
+    children: PropTypes.node.isRequired
+};
+
+TextProvider.defaultProps = {
+    globalText: {}
 };
