@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn run build
-      - run: yarn run lint src
+      - run: yarn run lint
       - persist_to_workspace:
           root: .
           paths:
