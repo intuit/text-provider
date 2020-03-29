@@ -8,35 +8,37 @@
     "url": "https://github.com/intuit/text-provider"
   },
   "main": "build/index.js",
-  "peerDependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
-  },
-  "dependencies": {
-    "babel-preset-react": "^6.24.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "webpack": "^2.6.1"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch",
-    "build": "webpack",
-    "lint": "eslint src"
+    "lint:fix": "eslint --fix src/*.jsx src/*.js",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --mode development"
   },
   "author": {
     "name": "Rohith R",
     "email": "rohithr31@gmail.com"
   },
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-core": "6.26.3",
-    "babel-eslint": "10.0.3",
-    "babel-loader": "7.1.5",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-plugin-transform-react-jsx": "6.24.1",
-    "babel-preset-env": "1.7.0",
-    "eslint": "5.16.0",
-    "eslint-plugin-react": "7.16.0"
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.0.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }

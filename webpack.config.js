@@ -1,28 +1,98 @@
-var path = require('path');
+/*
+* This contains the configuration for our module.
+* We use this configuration to figure out our start points, logical structure and other optimizations possible.
+* These may (in the future) include :
+*   - Splitting tthe code based on entry points
+*   - Adding multiple outputs using the same config
+*/
+const path = require('path');
+
 module.exports = {
-  entry: './src/index.js',
+  mode: 'production',
+  entry: ['src/index.js'],
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2' // THIS IS THE MOST IMPORTANT LINE! :mindblow: I wasted more than 2 days until realize this was the line most important in all this guide.
+    libraryTarget: 'commonjs2'
   },
-  module: {
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  externals: {
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react'
+    },
+    'react-dom': {
+        root: 'ReactDOM',
+        commonjs2: 'react-dom',
+        commonjs: 'react-dom',
+        amd: 'react-dom'
+    }
+  },
+  module : {
     rules: [
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /(node_modules|bower_components|build)/,
+        test: /\.txt$/,
+        use: 'raw-loader'
+      },
+      {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          emitError: true,
+          failOnError: true,
+          emitWarning: true,
+          failOnWarning: false,
+        },
+        resolve: {
+          extensions: ['.js', '.jsx']
+        }
+      },
+      {
+        test: /\.jsx?$/,
         use: {
           loader: 'babel-loader',
+          query: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        },
+        resolve: {
+          extensions: ['.js', '.jsx']
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
           options: {
-            presets: ['react']
+            attrs: [':data-src']
           }
         }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        loader: 'url-loader?limit=100000'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader'
       }
     ]
   },
-  externals: {
-    'react': 'commonjs react', // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
-    'react-redux': 'commonjs react-redux'
-  }
+  resolve: {
+    modules: [
+      path.resolve(__dirname, './'),
+      './node_modules'
+    ]
+  },
+  devServer: {
+    port: 3001
+  },
 };
+
