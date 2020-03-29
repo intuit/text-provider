@@ -14,6 +14,12 @@
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --mode development"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx eslint --ext .jsx --ext .js src/** --fix --no-error-on-unmatched-pattern && pretty-quick --staged",
+      "pre-push": "npx eslint --ext .jsx --ext .js src/** && npm run build && npm run test"
+    }
+  },
   "author": {
     "name": "Rohith R",
     "email": "rohithr31@gmail.com"
@@ -33,6 +39,9 @@
     "eslint-plugin-react": "^7.19.0",
     "file-loader": "^6.0.0",
     "html-loader": "^1.0.0",
+    "husky": "^4.2.3",
+    "prettier": "^2.0.2",
+    "pretty-quick": "^2.0.1",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
