@@ -16,6 +16,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "npx eslint --ext .jsx --ext .js src/** --fix --no-error-on-unmatched-pattern && pretty-quick --staged",
       "pre-push": "npx eslint --ext .jsx --ext .js src/** && npm run build"
     }
@@ -28,6 +29,8 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.4.2",
