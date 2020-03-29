@@ -1,6 +1,6 @@
 {
   "name": "text-provider",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "A component which provides all the string constants using provider pattern.",
   "license": "MIT",
   "repository": {
