@@ -17,7 +17,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npx eslint --ext .jsx --ext .js src/** --fix --no-error-on-unmatched-pattern && pretty-quick --staged",
-      "pre-push": "npx eslint --ext .jsx --ext .js src/** && npm run build && npm run test"
+      "pre-push": "npx eslint --ext .jsx --ext .js src/** && npm run build"
     }
   },
   "author": {
