@@ -12,25 +12,21 @@ const FormattedMessage = (props, context) => {
   /**
    * Iterate through all the keys given as the prop and replace with corresponding values.
    */
-  values.keys.forEach((key) => {
+  Object.keys(values).forEach((key) => {
     messageString = messageString.replace(`{${key}}`, values[key]);
   });
   /* Do not frown over this, many a times you need to do this, like :
-  * https://github.com/yahoo/react-intl/blob/master/src/components/html-message.js#L86
-  */
+   * https://github.com/yahoo/react-intl/blob/master/src/components/html-message.js#L86
+   */
   /* eslint-disable react/no-danger */
-  return (
-    <span dangerouslySetInnerHTML={{ __html: messageString }} />
-  );
+  return <span dangerouslySetInnerHTML={{ __html: messageString }} />;
 };
 
 FormattedMessage.contextType = TextContext;
 
 FormattedMessage.propTypes = {
   id: PropTypes.string.isRequired,
-  values: PropTypes.objectOf(
-    PropTypes.object,
-  ),
+  values: PropTypes.objectOf(PropTypes.object),
 };
 
 FormattedMessage.defaultProps = {
