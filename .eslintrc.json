@@ -1,36 +1,21 @@
 {
-    "env": {
-        "browser": true
-    },
-    "extends": "eslint:recommended",
+    "root": true,
     "parser": "babel-eslint",
-    "parserOptions": {
-        "sourceType": "module",
-        "allowImportExportEverywhere": true,
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018
-    },
-    "plugins": [
-        "react"
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "airbnb"
     ],
-    "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
+    "settings": {
+        "import/extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
         ]
+    },
+    "rules": {
+        "import/extensions": "off",
+        "import/no-unresolved": "off"
     }
 }
