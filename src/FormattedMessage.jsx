@@ -8,9 +8,9 @@ const FormattedMessage = (props) => (
       /**
        * We get the text to be injected from react's context. Here its TextContext
        */
-      const { id, values } = props;
+      const { id, values, alt } = props;
       /* eslint-disable-next-line react/destructuring-assignment */
-      let messageString = Object.prototype.hasOwnProperty.call(context, id) ? context[id] : '';
+      let messageString = Object.prototype.hasOwnProperty.call(context, id) ? context[id] : alt;
       /**
        * Iterate through all the keys given as the prop and replace with corresponding values.
        */
@@ -29,10 +29,12 @@ const FormattedMessage = (props) => (
 FormattedMessage.propTypes = {
   id: PropTypes.string.isRequired,
   values: PropTypes.objectOf(PropTypes.object),
+  alt: PropTypes.string,
 };
 
 FormattedMessage.defaultProps = {
   values: {},
+  alt: '',
 };
 
 export { FormattedMessage as default };
