@@ -1,7 +1,8 @@
 import React from 'react';
 import { TextContext } from './TextProvider';
 
-const withTextProvider = (SomeComponent) => { /* eslint-disable-line no-unused-vars */
+const withTextProvider = (SomeComponent) => {
+  /* eslint-disable-line no-unused-vars */
   class TextProviderHOC extends React.Component {
     constructor(props) {
       super(props);
@@ -20,6 +21,7 @@ const withTextProvider = (SomeComponent) => { /* eslint-disable-line no-unused-v
       return (
         <SomeComponent
           getTextForKey={this.getTextForKey}
+          {...this.props} /* eslint-disable-line react/jsx-props-no-spreading */
         />
       );
     }
