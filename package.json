@@ -39,7 +39,7 @@
     "eslint-loader": "4.0.2",
     "eslint-plugin-import": "2.20.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react": "7.20.0",
     "file-loader": "6.0.0",
     "html-loader": "1.1.0",
     "husky": "4.2.5",
