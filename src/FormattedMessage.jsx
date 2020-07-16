@@ -20,8 +20,11 @@ const FormattedMessage = (props) => (
       /* Do not frown over this, many a times you need to do this, like :
        * https://github.com/yahoo/react-intl/blob/master/src/components/html-message.js#L86
        */
+      const style = {
+        fontSize: 'inherit',
+      };
       /* eslint-disable react/no-danger */
-      return <span dangerouslySetInnerHTML={{ __html: messageString }} />;
+      return <span style={style} dangerouslySetInnerHTML={{ __html: messageString }} />;
     }}
   </TextContext.Consumer>
 );
