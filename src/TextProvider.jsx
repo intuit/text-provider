@@ -5,17 +5,11 @@ export const TextContext = React.createContext({});
 
 const TextProvider = (props) => {
   const { globalText, children } = props;
-  return (
-    <TextContext.Provider value={globalText}>
-      {children}
-    </TextContext.Provider>
-  );
+  return <TextContext.Provider value={globalText}>{children}</TextContext.Provider>;
 };
 
 TextProvider.propTypes = {
-  globalText: PropTypes.objectOf(
-    PropTypes.object,
-  ),
+  globalText: PropTypes.objectOf(PropTypes.string),
   children: PropTypes.node.isRequired,
 };
 
