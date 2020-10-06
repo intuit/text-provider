@@ -1,4 +1,4 @@
-<div align="center">
+<div style="text-align: center">
     <img
         width="200" height="200"
         src="./logo.png"
@@ -9,7 +9,7 @@
     </p>
 </div>
 
-<div align="center">
+<div style="text-align: center">
     <a href="https://circleci.com/gh/intuit/text-provider">
         <img
             src="https://img.shields.io/circleci/project/github/intuit/text-provider/master.svg?style=flat-square&logo=circleci"
@@ -38,10 +38,10 @@
 
 Text provider is a library to place all the string constants of an application in a single place and use them inside the components in a memory friendly way.
 
-It provides two components:
+It provides **two components**:
 
-1. [TextProvider](src/TextProvider/index.js)
-2. [FormattedMessage](src/FormattedMessage/index.js)
+1. [TextProvider](src/TextProvider.jsx)
+2. [FormattedMessage](src/FormattedMessage.jsx)
 
 ## Install
 
@@ -57,19 +57,23 @@ npm i text-provider
 const sampleText = require("src/nls/sample-text.json");
 ```
 
-2. Use the [TextProvider](src/TextProvider/index.js) to make it available for all the components:
+2. Use the [TextProvider](src/TextProvider.jsx) to make it available for all the components:
 
 ```jsx
-<TextProvider globalText={sampleText} >
-  <MyPresentationalComponent />
+<TextProvider globalText={sampleText}>
+  <MyPresentationalComponent/>
 </TextProvider>
 ```
 
-3. Use it inside the presentational component:
+3. Now you can use [FormattedMessage](src/FormattedMessage.jsx) inside the presentational component:
 
 ```jsx
-<FormattedMessage id="Random Id"/>
+const MyPresentationalComponent = () => {
+  <FormattedMessage id="Random Id"/>
+};
 ```
+
+A set of `values` can be pass to **FormattedMessage** as props, for example:
 
 ```jsx
 const randomId = "Random Id";
@@ -91,3 +95,6 @@ Works like a format string also. Example JSON:
 Then ``${valueToBeInjected}`` gets replaced with the value specified in `values`.
 
 Make sure that a string by the same `id` exists in the JSON file.
+
+## Contributing
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
