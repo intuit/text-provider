@@ -24,7 +24,7 @@ const FormattedMessage = (props) => (
         fontSize: 'inherit',
       };
       /* eslint-disable react/no-danger */
-      return <span style={style} dangerouslySetInnerHTML={{ __html: messageString }} />;
+      return <span automation-id="Formatted-Message" aria-label="formatted text" style={style} dangerouslySetInnerHTML={{ __html: messageString }} />;
     }}
   </TextContext.Consumer>
 );
