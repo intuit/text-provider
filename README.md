@@ -40,8 +40,8 @@ Text provider is a library to place all the string constants of an application i
 
 It provides two components:
 
-1. [TextProvider](src/TextProvider/index.js)
-2. [FormattedMessage](src/FormattedMessage/index.js)
+1. [TextProvider](src/TextProvider.jsx)
+2. [FormattedMessage](src/FormattedMessage.jsx)
 
 ## Install
 
@@ -57,7 +57,7 @@ npm i text-provider
 const sampleText = require("src/nls/sample-text.json");
 ```
 
-2. Use the [TextProvider](src/TextProvider/index.js) to make it available for all the components:
+2. Use the [TextProvider](src/TextProvider.jsx) to make it available for all the components:
 
 ```jsx
 <TextProvider globalText={sampleText} >
