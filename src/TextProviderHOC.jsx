@@ -1,24 +1,33 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { TextContext } from './TextProvider';
 
 const withTextProvider = (SomeComponent) => {
-  function TextProviderHOC (props) {
-    const globalText = useContext(TextContext);
+  /* eslint-disable-line no-unused-vars */
+  class TextProviderHOC extends React.Component {
+    constructor(props) {
+      super(props);
+      this.getTextForKey = this.getTextForKey.bind(this);
+    }
 
-    function getTextForKey(key) {
+    getTextForKey(key) {
+      const globalText = this.context;
       if (Object.prototype.hasOwnProperty.call(globalText, key)) {
         return globalText[key];
       }
       return '';
     }
 
-    return (
-      <SomeComponent
-        getTextForKey={getTextForKey}
-        {...props} /* eslint-disable-line react/jsx-props-no-spreading */
-      />
-    );
+    render() {
+      return (
+        <SomeComponent
+          getTextForKey={this.getTextForKey}
+          {...this.props} /* eslint-disable-line react/jsx-props-no-spreading */
+        />
+      );
+    }
   }
+
+  TextProviderHOC.contextType = TextContext;
 
   return TextProviderHOC;
 };
