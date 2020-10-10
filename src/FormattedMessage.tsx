@@ -1,14 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { TextContext } from './TextProvider';
 
-const FormattedMessage = (props) => (
+interface FormattedMessageProps {
+  id: string;
+  values?: {};
+  alt?: string;
+}
+
+const FormattedMessage: React.FC<FormattedMessageProps> = (props: FormattedMessageProps) => (
   <TextContext.Consumer>
     {(context) => {
       /**
        * We get the text to be injected from react's context. Here its TextContext
        */
-      const { id, values, alt } = props;
+      const { id, values = {}, alt = '' } = props;
       /* eslint-disable-next-line react/destructuring-assignment */
       let messageString = Object.prototype.hasOwnProperty.call(context, id) ? context[id] : alt;
       /**
@@ -28,16 +33,5 @@ const FormattedMessage = (props) => (
     }}
   </TextContext.Consumer>
 );
-
-FormattedMessage.propTypes = {
-  id: PropTypes.string.isRequired,
-  values: PropTypes.objectOf(PropTypes.object),
-  alt: PropTypes.string,
-};
-
-FormattedMessage.defaultProps = {
-  values: {},
-  alt: '',
-};
 
 export { FormattedMessage as default };
