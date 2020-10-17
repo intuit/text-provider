@@ -1,6 +1,7 @@
 import React from "react";
 import { TextProvider, FormattedMessage } from "text-provider";
 import Banner from "./Banner";
+import HOCExample from "./HOCExample";
 
 import "./styles.css";
 
@@ -31,7 +32,13 @@ export default class App extends React.Component {
           {/* The banner component uses the TextProvider component
         in ancestory to find all loaded strings. */}
           <Banner />
-          <FormattedMessage id="note" values={stringVariables} />
+          <h3>
+            <FormattedMessage id="note" values={stringVariables} />
+          </h3>
+
+          <h3>
+            <HOCExample />
+          </h3>
         </TextProvider>
       </React.Fragment>
     );
