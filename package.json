@@ -10,7 +10,7 @@
   "main": "build/index.js",
   "scripts": {
     "lint:fix": "eslint --fix src/*.jsx src/*.js",
-    "lint": "eslint src/*.jsx src/*.js",
+    "lint": "eslint src/*.jsx src/*.js src/*.tsx src/*.ts",
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --mode development"
   },
@@ -31,6 +31,10 @@
     "@babel/preset-react": "7.10.4",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "css-loader": "3.6.0",
@@ -45,6 +49,8 @@
     "husky": "4.2.5",
     "prettier": "2.1.2",
     "pretty-quick": "2.0.1",
+    "ts-loader": "^8.0.5",
+    "typescript": "^4.0.3",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0"

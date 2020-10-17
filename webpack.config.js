@@ -1,10 +1,10 @@
 /*
-* This contains the configuration for our module.
-* We use this configuration to figure out our start points, logical structure and other optimizations possible.
-* These may (in the future) include :
-*   - Splitting tthe code based on entry points
-*   - Adding multiple outputs using the same config
-*/
+ * This contains the configuration for our module.
+ * We use this configuration to figure out our start points, logical structure and other optimizations possible.
+ * These may (in the future) include :
+ *   - Splitting tthe code based on entry points
+ *   - Adding multiple outputs using the same config
+ */
 const path = require('path');
 
 module.exports = {
@@ -13,30 +13,31 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    modules: [path.resolve(__dirname, './'), './node_modules'],
   },
   externals: {
     react: {
       root: 'React',
       commonjs2: 'react',
       commonjs: 'react',
-      amd: 'react'
+      amd: 'react',
     },
     'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom'
-    }
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
   },
-  module : {
+  module: {
     rules: [
       {
         test: /\.txt$/,
-        use: 'raw-loader'
+        use: 'raw-loader',
       },
       {
         enforce: 'pre',
@@ -50,49 +51,47 @@ module.exports = {
           failOnWarning: false,
         },
         resolve: {
-          extensions: ['.js', '.jsx']
-        }
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
       },
       {
         test: /\.jsx?$/,
         use: {
           loader: 'babel-loader',
           query: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
         },
         resolve: {
-          extensions: ['.js', '.jsx']
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
         },
-        exclude: /node_modules/
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.(html)$/,
         use: {
           loader: 'html-loader',
           options: {
-            attrs: [':data-src']
-          }
-        }
+            attrs: [':data-src'],
+          },
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf)$/,
-        loader: 'url-loader?limit=100000'
+        loader: 'url-loader?limit=100000',
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader'
-      }
-    ]
-  },
-  resolve: {
-    modules: [
-      path.resolve(__dirname, './'),
-      './node_modules'
-    ]
+        loader: 'file-loader',
+      },
+    ],
   },
   devServer: {
-    port: 3001
+    port: 3001,
   },
 };
-

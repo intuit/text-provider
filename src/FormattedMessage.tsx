@@ -3,13 +3,13 @@ import { TextContext } from './TextProvider';
 
 interface FormattedMessageProps {
   id: string;
-  values?: {};
+  values?: { [key: string]: string };
   alt?: string;
 }
 
 const FormattedMessage: React.FC<FormattedMessageProps> = (props: FormattedMessageProps) => (
   <TextContext.Consumer>
-    {(context) => {
+    {(context: { [key: string]: string }) => {
       /**
        * We get the text to be injected from react's context. Here its TextContext
        */
