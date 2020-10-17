@@ -1,19 +1,18 @@
 import React from 'react';
 import { TextContext } from './TextProvider';
 
-interface FormattedMessageProps {
+interface Props {
   id: string;
   values?: { [key: string]: string };
   alt?: string;
 }
 
-const FormattedMessage: React.FC<FormattedMessageProps> = (props: FormattedMessageProps) => (
+const FormattedMessage: React.FC<Props> = ({ id, values = {}, alt = '' }: Props) => (
   <TextContext.Consumer>
     {(context: { [key: string]: string }) => {
       /**
        * We get the text to be injected from react's context. Here its TextContext
        */
-      const { id, values = {}, alt = '' } = props;
       /* eslint-disable-next-line react/destructuring-assignment */
       let messageString = Object.prototype.hasOwnProperty.call(context, id) ? context[id] : alt;
       /**
