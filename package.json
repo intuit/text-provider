@@ -7,12 +7,12 @@
     "type": "git",
     "url": "https://github.com/intuit/text-provider"
   },
-  "main": "build/index.js",
+  "main": "build/index.ts",
   "scripts": {
+    "compile": "tsc --noEmit",
     "lint:fix": "eslint --fix src/*.jsx src/*.js",
     "lint": "eslint src/*.jsx src/*.js",
-    "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server --mode development"
+    "build": "parcel build src/index.ts"
   },
   "husky": {
     "hooks": {
@@ -25,33 +25,19 @@
     "name": "Rohith R",
     "email": "rohithr31@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Niti Singhal",
+      "github": "nsinghal12",
+      "url": "https://nitisinghal.com"
+    }
+  ],
   "devDependencies": {
-    "@babel/core": "7.11.6",
-    "@babel/preset-env": "7.11.5",
-    "@babel/preset-react": "7.10.4",
-    "@commitlint/cli": "8.3.5",
-    "@commitlint/config-conventional": "8.3.4",
-    "babel-eslint": "10.1.0",
-    "babel-loader": "8.1.0",
-    "css-loader": "3.6.0",
-    "eslint": "7.5.0",
-    "eslint-config-airbnb": "18.2.0",
-    "eslint-loader": "4.0.2",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jsx-a11y": "6.3.1",
-    "eslint-plugin-react": "7.20.3",
-    "file-loader": "6.1.0",
-    "html-loader": "1.1.0",
-    "husky": "4.2.5",
-    "prettier": "2.1.2",
-    "pretty-quick": "2.0.1",
-    "webpack": "4.44.1",
-    "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.0"
-  },
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^4.0.3"
   }
 }
