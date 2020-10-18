@@ -1,21 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TextContext } from './TextProvider';
 
 const withTextProvider = (SomeComponent) => {
   /* eslint-disable-line no-unused-vars */
   class TextProviderHOC extends React.Component {
-    constructor(props) {
-      super(props);
-      this.getTextForKey = this.getTextForKey.bind(this);
-    }
-
-    getTextForKey(key) {
-      const globalText = this.context;
-      if (Object.prototype.hasOwnProperty.call(globalText, key)) {
-        return globalText[key];
-      }
-      return '';
-    }
+    getTextForKey = id => {
+      const { values, alt } = props;
+      let messageString = Object.prototype.hasOwnProperty.call(this.context, id) ? this.context[id] : alt;
+      // Iterate through all the values given and replace with corresponding key values.
+      Object.keys(values).forEach((key) => {
+        messageString = messageString.replace(`{${key}}`, values[key]);
+      });
+      return messageString;
+    };
 
     render() {
       return (
@@ -28,6 +26,16 @@ const withTextProvider = (SomeComponent) => {
   }
 
   TextProviderHOC.contextType = TextContext;
+
+  TextProviderHOC.propTypes = {
+    values: PropTypes.objectOf(PropTypes.object),
+    alt: PropTypes.string,
+  };
+
+  TextProviderHOC.defaultProps = {
+    values: {},
+    alt: '',
+  };
 
   return TextProviderHOC;
 };
