@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { TextContext } from './TextProvider';
 
-function useTextProvider({context = TextContext, values = {}, alt = ''}) {
+function useTextProvider(context = TextContext, values = {}, alt = '') {
   const globalText = useContext(context);
   return (id) => {
     let messageString = Object.prototype.hasOwnProperty.call(globalText, id) ? context[id] : alt;
