@@ -8,6 +8,6 @@
   "rules": {
     "import/extensions": "off",
     "import/no-unresolved": "off",
-    "react/jsx-filename-extension": [2, { "extensions": [".jsx", ".tsx", ".ts"] }]
+    "react/jsx-filename-extension": [2, { "extensions": [".jsx", ".tsx"] }]
   }
 }
