@@ -13,7 +13,7 @@
     "lint": "eslint src/*.jsx src/*.js",
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --mode development",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "husky": {
     "hooks": {
@@ -49,6 +49,7 @@
     "jest": "^26.4.2",
     "prettier": "2.1.2",
     "pretty-quick": "2.0.1",
+    "react-test-renderer": "^17.0.1",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0"

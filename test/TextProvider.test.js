@@ -1,3 +1,5 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
 import TextProvider from '../src/TextProvider';
 import FormattedMessage from '../src/FormattedMessage';
 
@@ -14,30 +16,24 @@ describe('<TextProvider /> rendering', () => {
     expect(TextProvider.defaultProps.globalText).toBeDefined();
   });
 
-  it('should render TextProvider', () => {
-    let wrapper = shallow(<TextProvider children={<div />} />);
-    expect(wrapper.exists()).toBe(true);
-  });
-
-  it('should render the child node provided as prop', () => {
-    let wrapper = shallow(
+  it('should render correctly', () => {
+    let wrapper = renderer.create(
       <TextProvider
         globalText={sampleText}
         children={<FormattedMessage id={randomId} values={values} />}
       />,
     );
-    expect(wrapper.children('FormattedMessage')).toHaveLength(1);
-    expect(wrapper.find('FormattedMessage').props().id).toBe(randomId);
-    expect(wrapper.find('FormattedMessage').props().values).toBe(values);
+    expect(wrapper.toJSON()).toMatchSnapshot();
   });
 
   it('should replace the id with value in the context message', () => {
-    let wrapper = mount(
+    let wrapper = renderer.create(
       <TextProvider
         globalText={sampleText}
         children={<FormattedMessage id={randomId} values={values} />}
       />,
     );
-    expect(wrapper.getDOMNode().innerHTML).toBe(values['valueToBeInjected']);
+    expect(wrapper.toJSON().props.style.fontSize).toBe('inherit');
+    expect(wrapper.toJSON().props.dangerouslySetInnerHTML.__html).toBe(values['valueToBeInjected']);
   });
 });
