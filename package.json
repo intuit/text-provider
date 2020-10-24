@@ -9,8 +9,8 @@
   },
   "main": "build/index.js",
   "scripts": {
-    "lint:fix": "eslint --fix src/*.jsx src/*.js",
-    "lint": "eslint src/*.jsx src/*.js src/*.tsx src/*.ts",
+    "lint:fix": "eslint --fix src/*.jsx src/*.js src/*.tsx",
+    "lint": "eslint src/*.jsx src/*.js src/*.tsx",
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --mode development"
   },
