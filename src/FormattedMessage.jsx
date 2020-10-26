@@ -9,7 +9,7 @@ const FormattedMessage = (props) => (
        * We get the text to be injected from react's context. Here its TextContext
        */
       const {
-        id, values, alt, ariaLabel,
+        id, values, alt, ariaLabel, automationId,
       } = props;
       /* eslint-disable-next-line react/destructuring-assignment */
       let messageString = Object.prototype.hasOwnProperty.call(context, id) ? context[id] : alt;
@@ -29,7 +29,7 @@ const FormattedMessage = (props) => (
       /* eslint-disable react/no-danger */
       return (
         <span
-          automation-id={id}
+          automation-id={(automationId === '') ? id : automationId}
           aria-label={(ariaLabel === '') ? messageString : ariaLabel}
           style={style}
           dangerouslySetInnerHTML={{ __html: messageString }}
@@ -44,12 +44,14 @@ FormattedMessage.propTypes = {
   values: PropTypes.objectOf(PropTypes.object),
   alt: PropTypes.string,
   ariaLabel: PropTypes.string,
+  automationId: PropTypes.string,
 };
 
 FormattedMessage.defaultProps = {
   values: {},
   alt: '',
   ariaLabel: '',
+  automationId: '',
 };
 
 export { FormattedMessage as default };
