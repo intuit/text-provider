@@ -10,7 +10,6 @@ jobs:
       - run: yarn install
       - run: yarn run build
       - run: yarn run lint
-      - run: npx semantic-release
       - persist_to_workspace:
           root: .
           paths:
@@ -21,6 +20,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - run: npx semantic-release
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
