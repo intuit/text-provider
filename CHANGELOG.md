@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.1.0](https://github.com/intuit/text-provider/compare/v1.0.0...v1.1.0) (2020-10-31)
+
+
+### Features
+
+* updating config to include package.json to be auto-updated with latest version ([6efe56f](https://github.com/intuit/text-provider/commit/6efe56fc884acc4c05854853ffb0248ed55f5f22))
+
 # 1.0.0 (2020-10-31)
 
 
