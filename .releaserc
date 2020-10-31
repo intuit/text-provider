@@ -10,12 +10,6 @@
                 "changelogTitle": "# Semantic Versioning Changelog"
             }
         ],
-        [
-            "@semantic-release/exec",
-            {
-                "prepareCmd": "./prepare-release.sh ${nextRelease.version}"
-            }
-        ],
         "@semantic-release/npm",
         [
             "@semantic-release/git",
