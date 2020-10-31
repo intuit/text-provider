@@ -21,13 +21,6 @@ jobs:
       - attach_workspace:
           at: .
       - run: npx semantic-release
-      - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - run: npm publish
-      - run: git config user.name $GITHUB_USERNAME && git config user.email $GITHUB_EMAIL
-      - run: npm version patch --force -m "[CI SKIP] Updating the package.json version"
-      - run: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git master
 workflows:
   version: 2
   build:

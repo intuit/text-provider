@@ -16,6 +16,7 @@
                 "prepareCmd": "./prepare-release.sh ${nextRelease.version}"
             }
         ],
+        "@semantic-release/npm",
         [
             "@semantic-release/git",
             {
