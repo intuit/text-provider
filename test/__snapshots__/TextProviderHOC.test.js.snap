@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextProviderHOC /> rendering should render TextProviderHOC correctly 1`] = `
+<div>
+  id
+</div>
+`;

@@ -31,7 +31,7 @@ const FormattedMessage = (props) => (
 
 FormattedMessage.propTypes = {
   id: PropTypes.string.isRequired,
-  values: PropTypes.objectOf(PropTypes.object),
+  values: PropTypes.objectOf(PropTypes.string),
   alt: PropTypes.string,
 };
 

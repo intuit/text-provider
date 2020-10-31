@@ -1,6 +1,6 @@
 {
   "name": "text-provider",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "description": "A component which provides all the string constants using provider pattern.",
   "license": "MIT",
   "repository": {
@@ -12,7 +12,8 @@
     "lint:fix": "eslint --fix src/*.jsx src/*.js",
     "lint": "eslint src/*.jsx src/*.js",
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "test": "jest --coverage"
   },
   "husky": {
     "hooks": {
@@ -41,6 +42,8 @@
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "css-loader": "3.6.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "7.5.0",
     "eslint-config-airbnb": "18.2.0",
     "eslint-loader": "4.0.2",
@@ -50,9 +53,11 @@
     "file-loader": "6.1.0",
     "html-loader": "1.1.0",
     "husky": "4.2.5",
+    "jest": "^26.4.2",
     "prettier": "2.1.2",
     "pretty-quick": "2.0.1",
     "semantic-release": "^17.1.2",
+    "react-test-renderer": "^17.0.1",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0"
