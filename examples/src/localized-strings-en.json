@@ -1,0 +1,6 @@
+{
+    "title": "Hello Codesandbox",
+    "subTitle": "Start editing to see some magic happen!",
+    "note": "Hello {name}, this string uses variable injection for the name.",
+    "hocExample": "This string is rendered using the higher-order component"
+}
