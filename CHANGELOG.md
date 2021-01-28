@@ -1,5 +1,13 @@
 # Semantic Versioning Changelog
 
+## [1.1.2](https://github.com/intuit/text-provider/compare/v1.1.1...v1.1.2) (2021-01-28)
+
+
+### Bug Fixes
+
+* adding the tests in CI ([74f1d24](https://github.com/intuit/text-provider/commit/74f1d245dc0ca2eca70dfb740832d3d42081e7a4))
+* adding the tests in CI ([17fde0c](https://github.com/intuit/text-provider/commit/17fde0ce6ed438a0dd3b75c927368d0dd12c32df))
+
 ## [1.1.1](https://github.com/intuit/text-provider/compare/v1.1.0...v1.1.1) (2021-01-28)
 
 
