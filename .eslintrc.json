@@ -1,21 +1,14 @@
 {
-    "root": true,
-    "parser": "babel-eslint",
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "airbnb"
-    ],
-    "settings": {
-        "import/extensions": [
-            ".js",
-            ".jsx",
-            ".ts",
-            ".tsx"
-        ]
-    },
-    "rules": {
-        "import/extensions": "off",
-        "import/no-unresolved": "off"
-    }
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
+  "settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"]
+  },
+  "rules": {
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "react/jsx-props-no-spreading": "off",
+    "max-len": "off"
+  }
 }
