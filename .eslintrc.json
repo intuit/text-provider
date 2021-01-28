@@ -9,6 +9,7 @@
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "react/jsx-props-no-spreading": "off",
-    "max-len": "off"
+    "max-len": "off",
+    "object-curly-newline": "off"
   }
 }
