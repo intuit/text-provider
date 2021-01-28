@@ -9,12 +9,16 @@ const withTextProvider = (SomeComponent) => {
       this.getTextForKey = this.getTextForKey.bind(this);
     }
 
-    getTextForKey(key) {
+    getTextForKey(id, values = {}) {
       const globalText = this.context;
-      if (Object.prototype.hasOwnProperty.call(globalText, key)) {
-        return globalText[key];
-      }
-      return '';
+      let messageString = Object.prototype.hasOwnProperty.call(globalText, id) ? globalText[id] : '';
+      /**
+       * Iterate through all the keys given as the prop and replace with corresponding values.
+       */
+      Object.keys(values).forEach((key) => {
+        messageString = messageString.replace(`{${key}}`, values[key]);
+      });
+      return messageString;
     }
 
     render() {
