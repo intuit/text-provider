@@ -1,5 +1,14 @@
 # Semantic Versioning Changelog
 
+## [1.1.1](https://github.com/intuit/text-provider/compare/v1.1.0...v1.1.1) (2021-01-28)
+
+
+### Bug Fixes
+
+* adding lint fixes ([d8ef3f1](https://github.com/intuit/text-provider/commit/d8ef3f1e159a5104f424206213e2ce3172b96bfa))
+* adding the values to the HOC ([433e08f](https://github.com/intuit/text-provider/commit/433e08f5640419cae61f8ca12d07ba53f46658de))
+* adding the values to the HOC ([19aac7b](https://github.com/intuit/text-provider/commit/19aac7bc5c7157afd78b35cd93139500ae0e1dde))
+
 # [1.1.0](https://github.com/intuit/text-provider/compare/v1.0.0...v1.1.0) (2020-10-31)
 
 
