@@ -8,7 +8,7 @@ const FormattedMessage = (props) => (
       /**
        * We get the text to be injected from react's context. Here its TextContext
        */
-      const { id, values, alt } = props;
+      const { id, values, alt, ...restProps } = props;
       /* eslint-disable-next-line react/destructuring-assignment */
       let messageString = Object.prototype.hasOwnProperty.call(context, id) ? context[id] : alt;
       /**
@@ -24,7 +24,9 @@ const FormattedMessage = (props) => (
         fontSize: 'inherit',
       };
       /* eslint-disable react/no-danger */
-      return <span style={style} dangerouslySetInnerHTML={{ __html: messageString }} />;
+      return (
+        <span style={style} dangerouslySetInnerHTML={{ __html: messageString }} {...restProps} />
+      );
     }}
   </TextContext.Consumer>
 );
