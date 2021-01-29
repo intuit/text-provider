@@ -1,5 +1,14 @@
 # Semantic Versioning Changelog
 
+## [1.1.3](https://github.com/intuit/text-provider/compare/v1.1.2...v1.1.3) (2021-01-29)
+
+
+### Bug Fixes
+
+* propagating props which come from parent component ([0811186](https://github.com/intuit/text-provider/commit/08111864e7b9a817c5cc5e0a7704129bacdd3235))
+* propagating props which come from parent component ([b571605](https://github.com/intuit/text-provider/commit/b5716059802147d0d31bc06bcd7b32c5a1474338))
+* propagating props which come from parent component ([138e059](https://github.com/intuit/text-provider/commit/138e05942e90decfc5250e14d6b2998f71e86ce1))
+
 ## [1.1.2](https://github.com/intuit/text-provider/compare/v1.1.1...v1.1.2) (2021-01-28)
 
 
