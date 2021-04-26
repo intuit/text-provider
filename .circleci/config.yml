@@ -4,7 +4,7 @@ debug: true
 jobs:
   build:
     docker:
-      - image: circleci/node:12.18.4
+      - image: circleci/node:12.22.1
     steps:
       - checkout
       - run: yarn install
@@ -17,7 +17,7 @@ jobs:
             - .
   publish:
     docker:
-      - image: circleci/node:12.18.4
+      - image: circleci/node:12.22.1
     steps:
       - attach_workspace:
           at: .
