@@ -56,14 +56,14 @@
     "prettier": "2.1.2",
     "pretty-quick": "2.0.1",
     "semantic-release": "^17.1.2",
-    "react-test-renderer": "17.0.2",
+    "react-test-renderer": "18.3.1",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
