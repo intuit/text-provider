@@ -39,7 +39,7 @@
     "@semantic-release/npm": "^7.0.6",
     "@semantic-release/release-notes-generator": "^9.0.1",
     "babel-eslint": "10.1.0",
-    "babel-loader": "8.1.0",
+    "babel-loader": "8.4.1",
     "css-loader": "3.6.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
